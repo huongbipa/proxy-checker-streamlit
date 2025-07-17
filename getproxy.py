@@ -7,7 +7,7 @@ def check_api_key(api_key):
     try:
         url = f"https://zeroios.net/check_key.php?key={api_key}"
         response = requests.get(url, timeout=5)
-        if "success" in response.text.lower() or "valid" in response.text.lower():
+        if "OK" in response.text.lower() or "OK" in response.text.lower():
             return True
     except:
         pass

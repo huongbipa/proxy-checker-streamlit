@@ -4,9 +4,9 @@ import concurrent.futures
 
 def check_api_key(api_key):
     try:
-        url = f"https://zeroios.net/check_key.php?key={api_key}"
+        url = f"https://zeroios.net/keytool.php?check={api_key}"
         response = requests.get(url, timeout=5)
-        if "OK" in response.text.lower() or "OK" in response.text.lower():
+        if "success" in response.text.lower() or "valid" in response.text.lower():
             return True
     except:
         pass

@@ -3,27 +3,27 @@ import requests
 import concurrent.futures
 
 # Kiểm tra API Key từ zeroios.net
-def check_api_key(api_key):
-    try:
-        url = f"https://zeroios.net/check_key.php?key={api_key}"
-        response = requests.get(url, timeout=5)
-        if "OK" in response.text.lower() or "OK" in response.text.lower():
-            return True
-    except:
-        pass
-    return False
+# def check_api_key(api_key):
+#     try:
+#         url = f"https://zeroios.net/check_key.php?key={api_key}"
+#         response = requests.get(url, timeout=5)
+#         if "OK" in response.text.lower() or "OK" in response.text.lower():
+#             return True
+#     except:
+#         pass
+#     return False
 
 # Cấu hình giao diện
 st.set_page_config(page_title="Proxy Checker", page_icon="🧪")
 st.title("🧪 Proxy Checker Online có Xác Thực API Key")
 
 # Bước 1: Nhập API Key
-api_key = st.text_input("🔑 Nhập API Key:", type="password")
+# api_key = st.text_input("🔑 Nhập API Key:", type="password")
 
 # Kiểm tra key
-if api_key:
-    if check_api_key(api_key):
-        st.success("✅ API Key hợp lệ. Bạn có thể sử dụng tool.")
+# if api_key:
+#     if check_api_key(api_key):
+#         st.success("✅ API Key hợp lệ. Bạn có thể sử dụng tool.")
 
         # Bước 2: Nhập proxy thủ công hoặc upload file
         st.subheader("📥 Nhập Proxy cần kiểm tra")

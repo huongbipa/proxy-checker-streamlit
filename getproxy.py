@@ -5,7 +5,7 @@ import concurrent.futures
 # Kiểm tra API Key từ zeroios.net
 def check_api_key(api_key):
     try:
-        url = f"https://zeroios.net/keytool.php?check={api_key}"
+        url = f"https://zeroios.net/check_key.php?key={api_key}"
         response = requests.get(url, timeout=5)
         if "success" in response.text.lower() or "valid" in response.text.lower():
             return True
